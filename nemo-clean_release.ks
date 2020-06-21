@@ -18,8 +18,6 @@ repo --name=mer-qt --baseurl=http://repo.merproject.org/obs/home:/neochapay:/mer
 repo --name=mer-mw --baseurl=http://repo.merproject.org/obs/home:/neochapay:/mer:/release:/@RELEASE@:/mw/latest_@ARCH@
 repo --name=nemo-ux --baseurl=http://repo.merproject.org/obs/home:/neochapay:/mer:/release:/@RELEASE@:/ux/latest_@ARCH@
 
-repo --name=up --baseurl=http://repo.merproject.org/obs/home:/neochapay:/mer:/build_test/mer_release_aarch64/
-
 %packages
 #if you have modules
 module-init-tools
@@ -56,12 +54,6 @@ qt5-plugin-platform-eglfs
 qt5-plugin-platform-linuxfb
 qt5-plugin-platform-minimal
 qt5-plugin-platform-offscreen
-qtdeclarative-render2d
-
-#PinePhone64 packages
-mesa-llvmpipe-dri-lima-driver
-mesa-llvmpipe-dri-swrast-driver
-mesa-llvmpipe-dri-sun4i-driver
 
 %end
 %pre
