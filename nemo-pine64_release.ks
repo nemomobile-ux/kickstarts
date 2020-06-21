@@ -5,7 +5,7 @@
 
 lang en_US.UTF-8
 keyboard us
-user --name nemo --groups audio,video --password=nemo
+user --name nemo --groups audio,video,users,input,timed --password=nemo
 timezone --utc UTC
 
 ### Commands from /tmp/sandbox/usr/share/ssu/kickstart/part/default
@@ -17,17 +17,12 @@ repo --name=mer-core --baseurl=http://repo.merproject.org/obs/home:/neochapay:/m
 repo --name=mer-qt --baseurl=http://repo.merproject.org/obs/home:/neochapay:/mer:/release:/@RELEASE@:/qt/latest_aarch64
 repo --name=mer-mw --baseurl=http://repo.merproject.org/obs/home:/neochapay:/mer:/release:/@RELEASE@:/mw/latest_aarch64
 repo --name=nemo-ux --baseurl=http://repo.merproject.org/obs/home:/neochapay:/mer:/release:/@RELEASE@:/ux/latest_aarch64
-repo --name=updates --baseurl=http://repo.merproject.org/obs/home:/neochapay:/mer:/release:/@RELEASE@:/updates/latest_aarch64
 repo --name=device --baseurl=http://repo.merproject.org/obs/home:/neochapay:/mer:/release:/@RELEASE@:/hardware:/pine64/latest_aarch64/
 
 %packages
 #if you have modules
 module-init-tools
 procps
-
-#this packages must be added into requires
-qt5-qtfeedback #BUG glacier-home #91
-kf5bluezqt-bluez5-declarative #BUG glacier-serrings #16
 
 #master packages
 lipstick-glacier-home-qt5
@@ -39,6 +34,7 @@ glacier-filemuncher
 glacier-gallery
 glacier-music
 glacier-settings
+glacier-settings-bluez
 glacier-messages
 glacier-packagemanager
 
@@ -56,6 +52,7 @@ gdb
 zypper
 connman-tools
 glacier-settings-developermode
+nemo-developer-mode
 
 #device package
 nemo-device-dont_be_evil
