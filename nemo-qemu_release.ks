@@ -5,7 +5,7 @@
 
 lang en_US.UTF-8
 keyboard us
-user --name nemo --groups audio,video --password nemo
+user --name nemo --groups audio,video,sailfish-system --password nemo
 timezone --utc UTC
 
 ### Commands from /tmp/sandbox/usr/share/ssu/kickstart/part/default
@@ -25,10 +25,6 @@ repo --name=kernel --baseurl=http://repo.merproject.org/obs/nemo:/testing:/hw:/x
 #if you have modules
 module-init-tools
 procps
-
-#this packages must be added into requires
-qt5-qtfeedback #BUG glacier-home #91
-kf5bluezqt-bluez5-declarative #BUG glacier-serrings #16
 
 #master packages
 lipstick-glacier-home-qt5
@@ -54,15 +50,7 @@ zypper
 
 #just for test
 qt5-plugin-platform-eglfs
-qt5-plugin-platform-linuxfb
 qt5-plugin-platform-minimal
-# qt5-plugin-platform-offscreen
-# qtdeclarative-render2d
-
-#PinePhone64 packages
-# mesa-llvmpipe-dri-lima-driver
-# mesa-llvmpipe-dri-swrast-driver
-# mesa-llvmpipe-dri-sun4i-driver
 
 kernel-adaptation-pc
 linux-firmware
